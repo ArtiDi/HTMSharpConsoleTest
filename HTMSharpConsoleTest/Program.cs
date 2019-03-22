@@ -13,51 +13,15 @@ namespace HTMSharpConsoleTest
         {
             try
             {
-                
+                var int1 = int.MaxValue;
+                var float1 = (float)int1;
             }
             catch (Exception e)
             {
 
             }
         }
-
-        /// <summary>
-        /// Analog to numpy.unravel_index
-        /// </summary>
-        /// <param name="index">Plain index of item</param>
-        /// <param name="dimensions">Dimension of matrix</param>
-        /// <returns></returns>
-        static int[] UnravelIndex(int index, int[] dimensions)
-        {
-            double buf = index;
-            var decl_dimensions = dimensions;
-            Array.Reverse(decl_dimensions);
-            var real_coordinates = new int[decl_dimensions.Length];
-            for (int dimensionIndex = 0; dimensionIndex < decl_dimensions.Length; dimensionIndex++)
-            {
-                real_coordinates[dimensionIndex] = (int)buf % decl_dimensions[dimensionIndex];
-                buf = Math.Truncate((buf / decl_dimensions[dimensionIndex]));
-                if (buf == 0)
-                    break;
-            }
-            Array.Reverse(real_coordinates);
-            return real_coordinates;
-        }
-
-
-        static void IncrementColumnCoordianteRecursive(uint dimension_index, int[] declarative_dimensions, int[] output_coordinates)
-        {
-            if (declarative_dimensions.Length != output_coordinates.Length) throw new Exception($"Dimension length ({declarative_dimensions.Length}) and output matrix length ({output_coordinates.Length}) do not mutch");
-
-            if (dimension_index >= declarative_dimensions.Length) return;
-
-            output_coordinates[dimension_index]++;
-            if (output_coordinates[dimension_index] >= declarative_dimensions[dimension_index])
-            {
-                output_coordinates[dimension_index] = 0;
-                IncrementColumnCoordianteRecursive(dimension_index + 1, declarative_dimensions, output_coordinates);
-            }
-        }
+        
         static void TestScalarEncoder()
         {
             var encoder = new ScalarEncoder(3, 0, 100, false, 0, 1, 0, true);
