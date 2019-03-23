@@ -13,8 +13,7 @@ namespace HTMSharpConsoleTest
         {
             try
             {
-                var int1 = int.MaxValue;
-                var float1 = (float)int1;
+               
             }
             catch (Exception e)
             {
@@ -51,6 +50,7 @@ namespace HTMSharpConsoleTest
             }
 
         }
+
         static string BitArrayToString(BitArray array)
         {
             if (array == null) return "";
