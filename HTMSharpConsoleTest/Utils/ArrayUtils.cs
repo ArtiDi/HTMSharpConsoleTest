@@ -465,7 +465,7 @@ namespace HTMSharpConsoleTest.Utils
                 var b = dimensions.Skip(i + 1).AsParallel().Aggregate((x, y) => x * y);
                 ravelIndex += multiIndex[i] * b;
             }
-            ravelIndex += multiIndex[multiIndex.Length - 1];
+            ravelIndex += multiIndex.Last();
             return ravelIndex;
         }
     }
