@@ -79,8 +79,7 @@ namespace HTMSharpConsoleTest.Utils
         }
         #endregion DIVISION
 
-        #region MULTIPLY
-       
+        #region MULTIPLICATION
         // ITEM BY ITEM
         public static double[] ItemByItemMultiply(uint[] array1, double[] array2)
         {
@@ -250,8 +249,187 @@ namespace HTMSharpConsoleTest.Utils
             }
             return result;
         }
-        #endregion MULTIPLY
+        #endregion MULTIPLICATION
 
+        #region ITEM INCREASE
+        public static uint[] ItemsIncrease(uint[] array, uint addition)
+        {
+            if (array == null) throw new Exception("array parameter is null");
+
+            var result = new uint[array.Length];
+            for (int i = 0; i < array.Length; i++)
+            {
+                result[i] = array[i] + addition;
+            }
+            return result;
+        }
+        public static int[] ItemsIncrease(uint[] array, int addition)
+        {
+            if (array == null) throw new Exception("array parameter is null");
+
+            var result = new int[array.Length];
+            for (int i = 0; i < array.Length; i++)
+            {
+                result[i] = (int)(array[i] + addition);
+            }
+            return result;
+        }
+        public static double[] ItemsIncrease(uint[] array, double addition)
+        {
+            if (array == null) throw new Exception("array parameter is null");
+
+            var result = new double[array.Length];
+            for (int i = 0; i < array.Length; i++)
+            {
+                result[i] = array[i] + addition;
+            }
+            return result;
+        }
+        
+        public static double[] ItemsIncrease(double[] array, uint addition)
+        {
+            if (array == null) throw new Exception("array parameter is null");
+
+            var result = new double[array.Length];
+            for (int i = 0; i < array.Length; i++)
+            {
+                result[i] = array[i] + addition;
+            }
+            return result;
+        }
+        public static double[] ItemsIncrease(double[] array, int addition)
+        {
+            if (array == null) throw new Exception("array parameter is null");
+
+            var result = new double[array.Length];
+            for (int i = 0; i < array.Length; i++)
+            {
+                result[i] = (array[i] + addition);
+            }
+            return result;
+        }
+        public static double[] ItemsIncrease(double[] array, double addition)
+        {
+            if (array == null) throw new Exception("array parameter is null");
+
+            var result = new double[array.Length];
+            for (int i = 0; i < array.Length; i++)
+            {
+                result[i] = array[i] + addition;
+            }
+            return result;
+        }
+
+        public static int[] ItemsIncrease(int[] array, uint addition)
+        {
+            if (array == null) throw new Exception("array parameter is null");
+
+            var result = new int[array.Length];
+            for (int i = 0; i < array.Length; i++)
+            {
+                result[i] = (int)(array[i] + addition);
+            }
+            return result;
+        }
+        public static int[] ItemsIncrease(int[] array, int addition)
+        {
+            if (array == null) throw new Exception("array parameter is null");
+
+            var result = new int[array.Length];
+            for (int i = 0; i < array.Length; i++)
+            {
+                result[i] = array[i] + addition;
+            }
+            return result;
+        }
+        public static double[] ItemsIncrease(int[] array, double addition)
+        {
+            if (array == null) throw new Exception("array parameter is null");
+
+            var result = new double[array.Length];
+            for (int i = 0; i < array.Length; i++)
+            {
+                result[i] = array[i] + addition;
+            }
+            return result;
+        }
+
+
+        public static uint[] ItemsIncrease(uint[] array, uint[] addition)
+        {
+            if (array == null) throw new Exception("array parameter is null");
+            if (addition == null) throw new Exception("addition parameter is null");
+
+            var result = new uint[array.Length];
+            for (int i = 0; i < array.Length; i++)
+            {
+                result[i] = array[i] + addition[i];
+            }
+            return result;
+        }
+        public static int[] ItemsIncrease(uint[] array, int[] addition)
+        {
+            if (array == null) throw new Exception("array parameter is null");
+            if (addition == null) throw new Exception("addition parameter is null");
+
+            var result = new int[array.Length];
+            for (int i = 0; i < array.Length; i++)
+            {
+                result[i] = (int)(array[i] + addition[i]);
+            }
+            return result;
+        }
+        public static double[] ItemsIncrease(uint[] array, double[] addition)
+        {
+            if (array == null) throw new Exception("array parameter is null");
+            if (addition == null) throw new Exception("addition parameter is null");
+
+            var result = new double[array.Length];
+            for (int i = 0; i < array.Length; i++)
+            {
+                result[i] = array[i] + addition[i];
+            }
+            return result;
+        }
+        public static int[] ItemsIncrease(int[] array, int[] addition)
+        {
+            if (array == null) throw new Exception("array parameter is null");
+            if (addition == null) throw new Exception("addition parameter is null");
+
+            var result = new int[array.Length];
+            for (int i = 0; i < array.Length; i++)
+            {
+                result[i] = (array[i] + addition[i]);
+            }
+            return result;
+        }
+        public static double[] ItemsIncrease(int[] array, double[] addition)
+        {
+            if (array == null) throw new Exception("array parameter is null");
+            if (addition == null) throw new Exception("addition parameter is null");
+
+            var result = new double[array.Length];
+            for (int i = 0; i < array.Length; i++)
+            {
+                result[i] = array[i] + addition[i];
+            }
+            return result;
+        }
+        public static double[] ItemsIncrease(double[] array, double[] addition)
+        {
+            if (array == null) throw new Exception("array parameter is null");
+            if (addition == null) throw new Exception("addition parameter is null");
+
+            var result = new double[array.Length];
+            for (int i = 0; i < array.Length; i++)
+            {
+                result[i] = array[i] + addition[i];
+            }
+            return result;
+        }
+        #endregion ITEM INCREASE
+
+        // Analog to numpy.unravel_index
         public static uint[] UnravelIndex(uint index, uint[] dimensions)
         {
             double buf = index;
@@ -267,6 +445,28 @@ namespace HTMSharpConsoleTest.Utils
             }
             Array.Reverse(real_coordinates);
             return real_coordinates;
+        }
+
+        // Analog to numpy.ravel_multi_index
+        public static uint RavelMultiIndex(uint[] multiIndex, uint[] dimensions)
+        {
+            if (multiIndex == null) throw new Exception("multiIndex array parameter is null.");
+            if (dimensions == null) throw new Exception("dimensions array parameter is null.");
+            if (multiIndex.Length != dimensions.Length) throw new Exception($"multiIndex length ({multiIndex.Length}) must be equal to dimensions length ({dimensions.Length}).");
+
+            for (int i = 0; i < multiIndex.Length; i++)
+            {
+                if (multiIndex[i] >= dimensions[i]) throw new Exception($"Index '{multiIndex[i]}' at position {i} is out of bounds. Max index at this dimension: {dimensions[i]-1}.");
+            }
+
+            uint ravelIndex = 0;
+            for (int i = 0; i < dimensions.Length-1; i++)
+            {
+                var b = dimensions.Skip(i + 1).AsParallel().Aggregate((x, y) => x * y);
+                ravelIndex += multiIndex[i] * b;
+            }
+            ravelIndex += multiIndex[multiIndex.Length - 1];
+            return ravelIndex;
         }
     }
 }
