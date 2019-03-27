@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using HTMSharpConsoleTest.Utils;
 
 namespace HTMSharpConsoleTest
 {
@@ -14,10 +13,7 @@ namespace HTMSharpConsoleTest
         {
             try
             {
-                var multiIndex = new uint[] {1,2};
-                var dimensions = new uint[] {4,6};
-                var ravelIndex = ArrayUtils.RavelMultiIndex(multiIndex,dimensions);
-
+               
             }
             catch (Exception e)
             {

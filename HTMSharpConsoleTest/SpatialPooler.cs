@@ -145,36 +145,19 @@ namespace HTMSharpConsoleTest
 
        
 
-        public BitArray MapPotential(uint columnIndex)
+        public BitArray MapPotential(uint index)
         {
             BitArray potential = new BitArray((int)NumberOfInputs);
-
-            var centerInput = MapColumn(columnIndex);
 
             return potential;
         }
         public uint MapColumn(uint columnIndex)
         {
-            var columnCoordinates = ArrayUtils.UnravelIndex(columnIndex, this.ColumnsDimensions);
-            var ratios = ArrayUtils.ItemByItemDivision(columnCoordinates, this.ColumnsDimensions);
+            var columnCoordinates = ArrayUtils.UnravelIndex(columnIndex, ColumnsDimensions);
+            var ratios = ArrayUtils.ItemByItemDivision(columnCoordinates, ColumnsDimensions);
             var inputCoordinates = ArrayUtils.ItemByItemMultiply(this.InputDimensions, ratios);
 
-            // TODO : shoud it be calculated only once ? 
-            var inputDimensDivColumnDimens = ArrayUtils.ItemByItemDivision(this.InputDimensions, this.ColumnsDimensions);
-            inputDimensDivColumnDimens = ArrayUtils.ItemByFactorMultiply(inputDimensDivColumnDimens, 0.5);
-            //
-
-            inputCoordinates = ArrayUtils.ItemsIncrease(inputCoordinates, inputDimensDivColumnDimens);
-
-            var inputCoordinatesInt = new uint[inputCoordinates.Length];
-            
-            for (int i = 0; i < inputCoordinates.Length; i++)
-            {
-                inputCoordinatesInt[i] = (uint)Math.Floor(inputCoordinates[i]);
-            }
-
-            var inputIndex = ArrayUtils.RavelMultiIndex(inputCoordinatesInt, this.InputDimensions);
-            return inputIndex;
+            return 0;
         }
     }
 }
